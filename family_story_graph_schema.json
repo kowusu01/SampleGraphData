@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FamilyStoryGraphSchema",
+  "type": "object",
+  "properties": {
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string",
+            "enum": [
+              "Person",
+              "Place",
+              "Event",
+              "Property"
+            ]
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "first_name": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "birth_date": {
+                "type": "string",
+                "format": "date"
+              },
+              "gender": {
+                "type": "string"
+              },
+              "occupation": {
+                "type": "string"
+              },
+              "biography": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "coordinates": {
+                "type": "object",
+                "properties": {
+                  "latitude": {
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "latitude",
+                  "longitude"
+                ]
+              },
+              "description": {
+                "type": "string"
+              },
+              "event_type": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "location_id": {
+                "type": "string"
+              },
+              "property_type": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string"
+              },
+              "owner_id": {
+                "type": "string"
+              },
+              "media_url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "media_type": {
+                "type": "string"
+              },
+              "trigger_event": {
+                "type": "string"
+              },
+              "virtual_coordinates": {
+                "type": "object",
+                "properties": {
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "z": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "x",
+                  "y",
+                  "z"
+                ]
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "properties"
+        ]
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "BORN_IN",
+              "LIVED_IN",
+              "PARTICIPATED_IN",
+              "RELATED_TO",
+              "OWNED",
+              "LOCATED_AT",
+              "ASSOCIATED_WITH",
+              "OCCURRED_AT",
+              "WITNESSED_BY",
+              "PLACE_OF_EDUCATION",
+              "CONNECTED_TO"
+            ]
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "since": {
+                "type": "string",
+                "format": "date"
+              },
+              "interaction_type": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "type"
+        ]
+      }
+    }
+  },
+  "required": [
+    "nodes",
+    "relationships"
+  ]
+}
