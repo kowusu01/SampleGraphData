@@ -152,7 +152,9 @@
               "CONNECTED_TO",
               "IN_REGION",
               "IN_COUNTRY",
-              "IN_CONTINENT"
+              "IN_CONTINENT",
+              "CONTAINS_COUNTRY"
+
 
             ]
           },
