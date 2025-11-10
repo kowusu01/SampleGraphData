@@ -153,7 +153,13 @@
               "IN_REGION",
               "IN_COUNTRY",
               "IN_CONTINENT",
-              "CONTAINS_COUNTRY"
+              "CONTAINS_COUNTRY",
+              "MIGRATED_FROM",
+              "MIGRATED_TO",
+              "WORKED_AT",
+              "WORKED_IN",
+              "ATTENDED",
+              "STUDIED_IN"
 
 
             ]
